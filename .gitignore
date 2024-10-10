@@ -1,0 +1,13 @@
+# Dependencies
+/node_modules
+
+# Environment variables
+.env
+
+# Misc
+.DS_Store
+
+# Additionally ignore unnecessary system files or temporary files within these folders
+*.log
+*.tmp
+*.lock
