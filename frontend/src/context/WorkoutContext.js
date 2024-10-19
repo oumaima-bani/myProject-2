@@ -33,7 +33,7 @@ export const WorkoutsContextProvider = ({children }) =>{//the children props rep
 
     return(
         //here we wrap our app components that needs access to this context (the whole app in our case, that's why we implemented it in the index.js file)
-        <WorkoutsContext.Provider value= {{state, dispatch}}>
+        <WorkoutsContext.Provider value= {{...state, dispatch}}>
             {children}
         </WorkoutsContext.Provider>
     )
