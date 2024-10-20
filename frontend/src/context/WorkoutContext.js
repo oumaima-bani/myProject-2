@@ -1,7 +1,7 @@
 //we're going to provide a global state here using react context : automatically page refreshing after update 
 import { createContext,useReducer } from "react";
 
-// creating a context named 'WorkoutsContext'
+// creating a context named 'WorkoutsContext' 
 export const WorkoutsContext = createContext()
 
 export const workoutsReducer = (state, action) => {//state : refers to the old state
@@ -16,13 +16,17 @@ export const workoutsReducer = (state, action) => {//state : refers to the old s
                 //action.payload : the new creacted value(s)
                 //...state.workouts: the rest of the values
             }
+        case 'DELETE_WORKOUTS':
+            return{
+                workouts: state.workouts.filter((w) =>w._id !== action.payload._id)
+            }
         default:
             return state
         
     }
 }
 
-
+  
 // provide the context to our app component tree (so that our components can access it)
 export const WorkoutsContextProvider = ({children }) =>{//the children props represents the coponents that will use this context (the 'app' in our case)
 
