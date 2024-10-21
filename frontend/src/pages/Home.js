@@ -11,10 +11,10 @@ const Home = () => {
   useEffect(() => {
     //to fetch the workouts from the api in the backend
     const fetchWorkouts = async () => {
-      const response = await fetch("/api/workouts");
+      const response = await fetch('/api/workouts');
       const json = await response.json(); //parse the workouts response from the api (array of documents) into an array of objects
       if (response.ok) {
-        dispatch({ type: "SET_WORKOUTS", payload: json });
+        dispatch({ type: 'SET_WORKOUTS', payload: json });
       }
     };
     fetchWorkouts();
