@@ -2,18 +2,27 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  Navigate 
 } from "react-router-dom";
+import {useAuthContext} from "./hooks/useAuthContext.js"
 //import pages & componenets
 import Home from "./pages/Home.js";
 import Navbar from "./components/Navbar.js";
+import Signup from "./pages/Signup.js";
+import Login from "./pages/Login.js";
+
 function App() {
+const {user}=useAuthContext()
+
   return (
     <div className="App">
       <BrowserRouter>
         <Navbar />
         <div className="pages">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={user ? <Home /> : <Navigate to="/login" /> } />
+            <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/" />} />
+            <Route path="/login" element={ !user ? <Login /> : <Navigate to="/" />} />
           </Routes>
         </div>
       </BrowserRouter>

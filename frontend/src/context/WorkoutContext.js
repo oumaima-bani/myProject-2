@@ -18,7 +18,7 @@ export const workoutsReducer = (state, action) => {//state : refers to the old s
             }
         case 'DELETE_WORKOUTS':
             return{
-                workouts: state.workouts.filter(w =>w._id !== action.payload._id)
+                workouts: state.workouts.filter(w =>w._id !== action.payload)
             }
         default:
             return state
@@ -31,7 +31,7 @@ export const workoutsReducer = (state, action) => {//state : refers to the old s
 export const WorkoutsContextProvider = ({children }) =>{//the children props represents the coponents that will use this context (the 'app' in our case)
 
     const [state, dispatch] = useReducer(workoutsReducer,{
-        workouts: null
+        workouts: []
     })
 
 
