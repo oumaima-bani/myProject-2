@@ -1,5 +1,5 @@
 {
-  "name": "myproject-2",
+  "name": "backend",
   "version": "1.0.0",
   "description": "��#\u0000 \u0000m\u0000y\u0000P\u0000r\u0000o\u0000j\u0000e\u0000c\u0000t\u0000-\u00002\u0000\r\u0000 \u0000",
   "main": "server.js",
@@ -13,13 +13,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "backend": "file:",
     "dotenv": "^16.4.5",
-    "express": "^4.21.0",
-    "myproject-2": "file:",
-    "nodemon": "^3.1.7"
-  },
-  "devDependencies": {
-    "@types/express": "^5.0.0",
-    "nodemon": "^3.1.7"
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.10.0",
+    "mongoose": "^8.8.3",
+    "nodemon": "^3.1.7",
+    "validator": "^13.12.0"
   }
 }
